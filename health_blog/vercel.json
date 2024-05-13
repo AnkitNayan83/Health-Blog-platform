@@ -1,0 +1,15 @@
+{
+    "builds": [
+        {
+            "src": "health_blog/wsgi.py",
+            "use": "@vercel/python",
+            "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "health_blog/wsgi.py"
+        }
+    ]
+}
